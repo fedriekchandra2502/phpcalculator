@@ -9,5 +9,6 @@ $app = new Application('calculator',0.1);
 $app->add(new Console\App\Commands\AddNumbersCommand);
 $app->add(new Console\App\Commands\SubtractNumbersCommand);
 $app->add(new Console\App\Commands\MultiplyNumbersCommand);
+$app->add(new Console\App\Commands\DivideNumbersCommand);
 
 $app->run();
