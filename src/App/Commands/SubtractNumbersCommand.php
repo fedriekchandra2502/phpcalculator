@@ -6,7 +6,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-
+require 'helpers.php';
 
 class SubtractNumbersCommand extends Command {
 
@@ -25,36 +25,10 @@ class SubtractNumbersCommand extends Command {
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $numbersToSubtract = $input->getArgument('numbers');
-        $result = 0;
-        $text = '';
-        $args = count($numbersToSubtract);
 
-        if($args > 1){
+        $result = doMath('subtract',$numbersToSubtract);
 
-            foreach($numbersToSubtract as $key => $value){
-
-                if($key == 0){
-                    $result = $value;
-                }else {
-                    $result -= $value;
-                }
-
-                if($key  == $args-1){
-                  $text .= $value.' ';
-                }else {
-                  $text .= $value.' - ';
-                }
-
-            }
-
-            $text .= '= '.$result;
-
-        } else {
-            $result = $numbersToSubtract[0];
-            $text .= $result;
-        }
-
-        $output->writeln($text);
+        $output->writeln($result);
 
         return 0;
     }
