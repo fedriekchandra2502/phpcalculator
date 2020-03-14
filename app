@@ -8,5 +8,6 @@ use Console\App\Commands\AddNumbersCommand;
 
 $app = new Application('calculator',0.1);
 $app->add(new AddNumbersCommand());
+$app->add(new SubtractNumbersCommand());
 
 $app->run();
