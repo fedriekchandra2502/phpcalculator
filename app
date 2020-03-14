@@ -3,11 +3,11 @@
 require_once __DIR__ . './vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
-use Console\App\Commands\SubtractNumbersCommand;
-use Console\App\Commands\AddNumbersCommand;
 
 $app = new Application('calculator',0.1);
-$app->add(new AddNumbersCommand());
-$app->add(new SubtractNumbersCommand());
+
+$app->add(new Console\App\Commands\AddNumbersCommand);
+$app->add(new Console\App\Commands\SubtractNumbersCommand);
+$app->add(new Console\App\Commands\MultiplyNumbersCommand);
 
 $app->run();

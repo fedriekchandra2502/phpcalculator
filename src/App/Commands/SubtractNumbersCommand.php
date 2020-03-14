@@ -6,7 +6,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-require 'helpers.php';
+require_once 'helpers.php';
 
 class SubtractNumbersCommand extends Command {
 
@@ -24,9 +24,9 @@ class SubtractNumbersCommand extends Command {
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $numbersToSubtract = $input->getArgument('numbers');
+        $numbers = $input->getArgument('numbers');
 
-        $result = doMath('subtract',$numbersToSubtract);
+        $result = doMath('subtract',$numbers);
 
         $output->writeln($result);
 

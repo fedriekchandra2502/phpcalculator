@@ -8,18 +8,17 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 require_once 'helpers.php';
 
-
-class AddNumbersCommand extends Command {
+class MultiplyNumbersCommand extends Command {
 
     protected function configure()
     {
-        $this->setName('add')
-             ->setDescription('Add all given Numbers')
-             ->setHelp('add <numbers>...')
+        $this->setName('multiply')
+             ->setDescription('Multiply all given Numbers')
+             ->setHelp('multiply <numbers>...')
              ->addArgument(
                 'numbers',
                 InputArgument::IS_ARRAY | InputArgument::REQUIRED,
-                'The numbers to be added'
+                'The numbers to be multiplied'
              );
     }
 
@@ -27,7 +26,7 @@ class AddNumbersCommand extends Command {
     {
         $numbers = $input->getArgument('numbers');
 
-        $result = doMath('add',$numbers);;
+        $result = doMath('multiply',$numbers);
 
         $output->writeln($result);
 
