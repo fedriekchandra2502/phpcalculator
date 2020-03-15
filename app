@@ -12,5 +12,6 @@ $app->add(new Console\App\Commands\MultiplyNumbersCommand);
 $app->add(new Console\App\Commands\DivideNumbersCommand);
 $app->add(new Console\App\Commands\PowNumbersCommand);
 $app->add(new Console\App\Commands\HistoryListCommand);
+$app->add(new Console\App\Commands\HistoryClearCommand);
 
 $app->run();

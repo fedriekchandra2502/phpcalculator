@@ -85,7 +85,7 @@ function printHistoryList($datas, $output) {
 
         //No section
         echo '| ';
-        $space = 3-strlen($key);
+        $space = 3-strlen($key+1);
         echo $key+1;
         for($i=0; $i < $space; $i++){
             echo ' ';

@@ -39,13 +39,18 @@ class HistoryListCommand extends Command {
             $datas = [];
             $filterData = [];
 
-            $file = fopen("db.csv","r");
+            if(file_exists("db.csv")){
 
-            while( !feof($file) ) {
-                $datas[] = fgetcsv($file);
+                $file = fopen("db.csv","r");
+
+                while( !feof($file) ) {
+                    $datas[] = fgetcsv($file);
+                }
+
+                fclose($file);
+
             }
 
-            fclose($file);
 
             foreach ($datas as $value) {
 
