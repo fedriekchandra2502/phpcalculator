@@ -25,7 +25,7 @@ class HistoryListCommand extends Command {
                  'D',
                  InputOption::VALUE_REQUIRED,
                  'Driver for storage connection',
-                 'file'
+                 'database'
              );
     }
 
@@ -34,7 +34,7 @@ class HistoryListCommand extends Command {
         $optionValue = $input->getOption('driver');
         $commands = $input->getArgument('commands');
 
-        if($optionValue == 'file') {
+        if($optionValue == 'file' || $optionValue == 'database') {
 
             $datas = [];
             $filterData = [];
